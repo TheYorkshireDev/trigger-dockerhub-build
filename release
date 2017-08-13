@@ -1,0 +1,16 @@
+#!/bin/sh
+
+TAG="$1"
+ENDPOINT="$2"
+[[ -z "$TAG" ]] && { echo "Error: TAG not provided $_db"; exit 1; }
+[[ -z "$ENDPOINT" ]] && { echo "Error: ENDPOINT not provided $_db"; exit 1; }
+
+request_body=$(cat <<EOF
+{
+    "source_type": "Tag",
+    "source_name": "$TAG"
+}
+EOF
+)
+
+curl -X POST -H "Content-Type: application/json" -d "$request_body" "$ENDPOINT"
