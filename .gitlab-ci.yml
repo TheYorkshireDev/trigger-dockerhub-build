@@ -58,6 +58,7 @@ github_publish:
     - git push github master --follow-tags
   only:
     - master
+    - tags
 
 # If the build has a tag, then use it to tag the docker image
 publish:
