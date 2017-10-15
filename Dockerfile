@@ -5,6 +5,6 @@
 # (c) 2017 - Steven Cooney
 #############################################################################
 
-FROM theyorkshiredev/curl-container:0.2.0
+FROM theyorkshiredev/curl-container:1.0.0
 
 COPY release /bin/
